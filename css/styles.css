@@ -1,0 +1,261 @@
+/* :root {
+    --btn-color: rgb(11, 78, 179);
+
+  } */
+  
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: Montserrat, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: grid;
+
+    /* place-items: center; */
+    min-height: 100vh;
+    background: url(../images/bg.png) no-repeat center center;
+    background-size: cover;
+}
+
+ul {
+    list-style: none;
+}
+
+  /* Global Stylings */
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+  
+input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+select {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 40px;
+    color: #828d90;
+}
+
+p {
+    font-size: 10px;
+    color: #a9b1ad;
+}
+
+h1 {
+    width: 100%;
+    font-size: 2.5rem;
+    color: #83a6e4;
+    text-transform: uppercase;
+    margin: 0px auto;
+}
+
+h2 {
+    width: 100%;
+    font-size: 2.4rem;
+    font-weight: 200;
+    letter-spacing: 0.3rem;
+    margin-top: 10px;
+    color: #fff;
+}
+  
+/* .width-50 {
+    width: 50%;  
+} */
+  
+.ml-auto {
+    margin-left: auto;
+}
+  
+.text-center {
+    text-align: center;
+}
+
+/* Sign up */
+  
+.container  {
+    width: 1200px;
+    padding: 10px 20px;
+    margin: 0px auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.logo {
+    width: 20rem;
+    height: 4rem;
+    margin-right: 12rem;
+}
+
+.sign-in {
+    width: 100%;
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    margin: 0px auto; 
+}
+
+.sign-in li {
+    padding-left: 5px;
+}
+
+.sign-in li input {
+    width: 200px;
+    margin-right: 0.5rem;
+}
+
+/* Progressbar */
+.progressbar {
+    width: 200px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+    margin-top: 2rem;
+}
+  
+.progressbar::before,
+.progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+}
+  
+.progress {    
+    width: 0%;
+    transition: 0.3s;
+}
+  
+.progress-step {
+    width: 0.8rem;
+    height: 0.8rem;
+    border: solid 2px #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.progress-step::after {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 0.85rem;
+}
+  
+.progress-step-active {
+    background-color: #fff;
+}
+  
+/* Form */
+.form {
+    width: clamp(320px, 30%, 430px);
+    margin: 0 auto;
+    color: #fff;
+    font-weight: 600;
+    width: 100%;
+    justify-content: space-between;
+}
+  
+.form-step {
+    display: none;
+    transform-origin: top;
+    animation: animate 0.5s;
+}
+  
+.form-step-active {
+    /* display: block; */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding-left: 5.5rem;
+    /* justify-content: space-between; */
+}
+  
+.input-group {
+    margin: 0.01rem;   
+    border: none; 
+    border-radius: 0.35rem;
+    padding: 0.3rem;
+    background-color: #828d90;
+}
+
+.wrapper-input {
+    display: block;
+    width: clamp(420px, 30%, 430px);
+    padding: 0px 50px;
+}
+  
+@keyframes animate {
+    from {
+      transform: scale(1, 0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+}
+  
+/* Button */
+/* .btns-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+} */
+  
+.btn {
+    padding: 0.75rem;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+}
+
+.btn-login, .btn-next {
+    background: linear-gradient(45deg, #5866ea, transparent) #2ba0ea;
+}
+
+.btn-prev {
+    border: solid 2px #fff;
+
+}
+
+.btn-login {
+    font-weight: 600;
+}
+
+.btn-login:hover,
+.btn-login:focus,
+.btn-next:hover,
+.btn-next:focus {
+    box-shadow: 0 0 15px  #2ba0ea;
+}
+
+.btn-start {
+    background: linear-gradient(45deg, #4caf50, transparent) #3cd342;
+}
+
+.btn-start:hover,
+.btn-start:focus {
+    box-shadow: 0 0 15px #3cd342;
+}

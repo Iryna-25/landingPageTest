@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LandingPage</title>
+
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <ul class="sign-in">
+                <li>
+                    <img class="logo" src="/images/svg/logo.svg" alt="logo" width="300" height="20">
+                </li>
+                <li>
+                    <input class="input-sing-in" type="Email" placeholder="Email">
+                </li>
+                <li>
+                    <input class="input-sing-in" type="Password" placeholder="Password">
+                </li>
+                <li>
+                    <button class="btn btn-login">Log in</button>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <h1>StarCompany DESIGNS, MANUFACTURES AND</h1>
+                <h2>Launches Advanced Rockets and  Spacecrafts</h2>
+            </div>
+        </section>
+        <section class="container">
+            <form action="#" class="form">
+            <!-- Steps -->
+                <div class="form-step form-step-active">
+                    <!-- <div class="btns-group">
+                        <a href="#" class="btn btn-prev"> < </a>
+                    </div> -->
+                    <div class="wrapper-input">
+                        <div class="input-group">
+                        <label for="prof">Who are you?</label>
+                        <select name="profession" id="prof">
+                      <option value="engineer"> Engineer </option>
+                      <option value="business"> Business</option>
+                      <option value="development"> Development </option>
+                      <option value="executive"> Executive </option>
+                      <option value="office manager/PA"> Office Manager/PA </option>
+                      <option value="accouManager"> AccouManager </option>
+                        </select>
+                        </div>
+                    </div>
+                    <div class="">
+                        <a href="#" class="btn btn-next width-50 ml-auto"> Next step > </a>
+                    </div>
+                </div>
+               
+                <div class="form-step">
+                    <div class="btns-group">
+                       <a href="#" class="btn btn-prev"> < </a> 
+                    </div>
+                    <div class="wrapper-input">
+                        <div class="input-group">
+                            <label for="age"> What is your age? </label>
+                            <select name="age" id="age">
+                                <option value="18"> 18 </option>
+                                <option value="19"> 19 </option>
+                                <option value="20"> 20 </option>
+                                <option value="21"> 21 </option>
+                                <option value="22"> 22 </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="btns-group">
+                        <a href="#" class="btn btn-next"> Next step > </a>
+                    </div>
+                </div>
+
+                <div class="form-step">
+                    <div class="btns-group">
+                        <a href="#" class="btn btn-prev"> < </a>
+                    </div>
+                    <div class="wrapper-input">
+                        <div class="input-group">
+                            <label for="loc"> I am from </label>
+                            <input type="text" name="loc" id="loc" placeholder="New Roads, 70760"/>
+                        </div>
+                        <p>E.g.: New Roads or 70760 <br> We don’t use postal addresses to contact members directly!</p> 
+                    </div>
+                    <div class="btns-group">
+                        <a href="#" class="btn btn-next"> Next step > </a>
+                    </div>
+                </div>
+
+                <div class="form-step">
+                    <div class="btns-group">
+                        <a href="#" class="btn btn-prev"> < </a>
+                    </div>
+                    <div class="wrapper-input">
+                        <div class="input-group">
+                            <label for="email">Your email adress</label>
+                            <input type="text" name="email" id="email" placeholder="Input your email"/>
+                        </div>
+                    </div>
+                    <div class="btns-group">
+                        <a href="#" class="btn btn-next"> Next step > </a>
+                    </div>
+                </div>
+
+                <div class="form-step">
+                    <div class="btns-group">
+                        <a href="#" class="btn btn-prev"> < </a>
+                    </div>
+                    <div class="wrapper-input">
+                        <div class="input-group">
+                        <label for="password">Create your password</label>
+                        <input type="password" name="password" id="password" />
+                    </div>
+                        <p>By clicking the button above you agree to our Terms of Use and </p>
+                    </div>
+                    <div class="btns-group">
+                        <input type="submit" value="Start now >" class="btn btn-start" />
+                    </div>
+                </div>
+            </form>
+            
+            <!-- Progress bar -->
+            <div class="progressbar container">
+                <div class="progress" id="progress"></div>
+                <div class="progress-step progress-step-active"></div>
+                <div class="progress-step"></div>
+                <div class="progress-step"></div>
+                <div class="progress-step"></div>
+                <div class="progress-step"></div>
+            </div>
+        </section>
+    </main>
+    <script src="/js/script.js"></script>
+</body>
+</html>
