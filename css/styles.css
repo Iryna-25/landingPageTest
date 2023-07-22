@@ -13,8 +13,6 @@ body {
     font-family: Montserrat, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     display: grid;
-
-    /* place-items: center; */
     min-height: 100vh;
     background: url(../images/bg.png) no-repeat center center;
     background-size: cover;
@@ -27,7 +25,6 @@ ul {
   /* Global Stylings */
 label {
     display: block;
-    margin-bottom: 0.5rem;
 }
   
 input {
@@ -36,6 +33,7 @@ input {
     padding: 0.75rem;
     border: none;
     border-radius: 0.5rem;
+    margin-top: 0.3rem;
 }
 
 select {
@@ -45,6 +43,7 @@ select {
     text-align: center;
     height: 40px;
     color: #828d90;
+    margin-top: 0.3rem;
 }
 
 p {
@@ -69,10 +68,6 @@ h2 {
     color: #fff;
 }
   
-/* .width-50 {
-    width: 50%;  
-} */
-  
 .ml-auto {
     margin-left: auto;
 }
@@ -90,6 +85,12 @@ h2 {
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+.container-form {
+    position: relative;
+    display: block;
+    min-height: 300px;
 }
 
 .logo {
@@ -115,80 +116,9 @@ h2 {
     margin-right: 0.5rem;
 }
 
-/* Progressbar */
-.progressbar {
-    width: 200px;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    counter-reset: step;
-    margin-top: 2rem;
-}
-  
-.progressbar::before,
-.progress {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 4px;
-    width: 100%;
-    z-index: -1;
-}
-  
-.progress {    
-    width: 0%;
-    transition: 0.3s;
-}
-  
-.progress-step {
-    width: 0.8rem;
-    height: 0.8rem;
-    border: solid 2px #fff;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-  
-.progress-step::after {
-    position: absolute;
-    top: calc(100% + 0.5rem);
-    font-size: 0.85rem;
-}
-  
-.progress-step-active {
-    background-color: #fff;
-}
-  
-/* Form */
-.form {
-    width: clamp(320px, 30%, 430px);
-    margin: 0 auto;
-    color: #fff;
-    font-weight: 600;
-    width: 100%;
-    justify-content: space-between;
-}
-  
-.form-step {
-    display: none;
-    transform-origin: top;
-    animation: animate 0.5s;
-}
-  
-.form-step-active {
-    /* display: block; */
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    padding-left: 5.5rem;
-    /* justify-content: space-between; */
-}
-  
+/* Form */ 
 .input-group {
-    margin: 0.01rem;   
+    margin: 0 2rem;   
     border: none; 
     border-radius: 0.35rem;
     padding: 0.3rem;
@@ -196,12 +126,13 @@ h2 {
 }
 
 .wrapper-input {
+    position: relative;
+    top: 40px;
     display: block;
-    width: clamp(420px, 30%, 430px);
-    padding: 0px 50px;
+    width: clamp(300px, 40%, 400px);
 }
   
-@keyframes animate {
+/* @keyframes animate {
     from {
       transform: scale(1, 0);
       opacity: 0;
@@ -210,15 +141,9 @@ h2 {
       transform: scale(1, 1);
       opacity: 1;
     }
-}
-  
-/* Button */
-/* .btns-group {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
 } */
   
+/* Button */  
 .btn {
     padding: 0.75rem;
     display: block;
@@ -258,4 +183,153 @@ h2 {
 .btn-start:hover,
 .btn-start:focus {
     box-shadow: 0 0 15px #3cd342;
+}
+
+
+/* Style the form */
+#regForm {
+    width: clamp(320px, 30%, 430px);
+    margin: 0 auto;
+    color: #fff;
+    font-weight: 600;
+    width: 100%;
+    height: 300px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+}
+  /* Style the input fields */
+input, select {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.3rem;
+}
+  
+  /* Mark input boxes that gets an error on validation: */
+input.invalid {
+    background-color: #ffdddd;
+}
+  
+  /* Hide all steps by default: */
+.tab {
+    display: none;
+}
+  
+  /* Make circles that indicate the steps of the form: */
+  .step {
+    /* height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+     */
+    width: 0.8rem;
+    height: 0.8rem;
+    border: solid 2px #fff;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0.4em;
+  }
+  
+  /* Mark the active step: */
+  .step.active {
+    opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color:  #fff;
+  }
+
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#prevBtn, #nextBtn {
+    position: absolute;
+    top: 70px;
+    padding: 0.75rem;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+}
+
+#nextBtn {
+    right: 300px;
+    background: linear-gradient(45deg, #5866ea, transparent) #2ba0ea;
+}
+
+#prevBtn {
+    left: 350px;
+    border: solid 2px #828d90;
+    background-color: transparent;
+    padding: 0.2rem 0.75rem;
+}
+
+#nextBtn:focus, 
+#nextBtn:hover {
+    box-shadow: 0 0 15px  #2ba0ea;
+}
+
+.btn-start {
+    background: linear-gradient(45deg, #4caf50, transparent) #3cd342;
+}
+
+.btn-start:hover,
+.btn-start:focus {
+    box-shadow: 0 0 15px #3cd342;
+}
+
+#errorEmail {
+    display: block;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.3rem;
+    margin: 0.2rem 2rem;
+}
+
+.step-wrapper {
+    position: fixed;
+    bottom: 360px;
+    left: 45%;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.arrow {
+    border: solid #828d90;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+  
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+  
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+
+.arrow-right {
+    border: solid #828d90;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
 }

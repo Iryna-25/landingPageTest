@@ -16,13 +16,18 @@
                     <img class="logo" src="/images/svg/logo.svg" alt="logo" width="300" height="20">
                 </li>
                 <li>
-                    <input class="input-sing-in" type="Email" placeholder="Email">
+                    <input 
+                    class="input-sing-in" type="email" placeholder="Email">
+                    <!-- <span id="errorEmail"> </span> -->
                 </li>
                 <li>
-                    <input class="input-sing-in" type="Password" placeholder="Password">
+                    <input class="input-sing-in" type="password" placeholder="Password">
+                    <p>Forgot password?</p>
                 </li>
+
                 <li>
-                    <button class="btn btn-login">Log in</button>
+                    <button class="btn btn-login" id="sbBtn" 
+                    onclick="nextPrev(1)">Log in</button>
                 </li>
             </ul>
         </div>
@@ -34,39 +39,37 @@
                 <h2>Launches Advanced Rockets and  Spacecrafts</h2>
             </div>
         </section>
-        <section class="container">
-            <form action="#" class="form">
-            <!-- Steps -->
-                <div class="form-step form-step-active">
-                    <!-- <div class="btns-group">
-                        <a href="#" class="btn btn-prev"> < </a>
-                    </div> -->
-                    <div class="wrapper-input">
-                        <div class="input-group">
-                        <label for="prof">Who are you?</label>
-                        <select name="profession" id="prof">
-                      <option value="engineer"> Engineer </option>
-                      <option value="business"> Business</option>
-                      <option value="development"> Development </option>
-                      <option value="executive"> Executive </option>
-                      <option value="office manager/PA"> Office Manager/PA </option>
-                      <option value="accouManager"> AccouManager </option>
-                        </select>
+
+        <section class="container container-form">
+            <form id="regForm" action="">                
+                <!-- One "tab" for each step in the form: -->
+                <div class="register" >
+                    <div style="overflow:auto;">
+                        <div style="float:right;">
+                            <button type="button" id="prevBtn" onclick="nextPrev(-1)"> 
+                                <p> <i class="arrow left"></i> </p>
+                            </button>
                         </div>
                     </div>
-                    <div class="">
-                        <a href="#" class="btn btn-next width-50 ml-auto"> Next step > </a>
+
+                    <div class="wrapper-input tab" >
+                        <div class="input-group">
+                            <label for="prof">Who are you?</label>
+                            <select name="profession" id="prof" oninput="this.className = ''">
+                                <option value="engineer"> Engineer </option>
+                                <option value="business"> Business</option>
+                                <option value="development"> Development </option>
+                                <option value="executive"> Executive </option>
+                                <option value="office manager/PA"> Office Manager/PA </option>
+                                <option value="accouManager"> AccouManager </option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-               
-                <div class="form-step">
-                    <div class="btns-group">
-                       <a href="#" class="btn btn-prev"> < </a> 
-                    </div>
-                    <div class="wrapper-input">
+
+                    <div class="wrapper-input tab">
                         <div class="input-group">
                             <label for="age"> What is your age? </label>
-                            <select name="age" id="age">
+                            <select name="age" id="age" oninput="this.className = ''">
                                 <option value="18"> 18 </option>
                                 <option value="19"> 19 </option>
                                 <option value="20"> 20 </option>
@@ -74,71 +77,94 @@
                                 <option value="22"> 22 </option>
                             </select>
                         </div>
+                        <span id="errorAge"> </span>
                     </div>
-                    <div class="btns-group">
-                        <a href="#" class="btn btn-next"> Next step > </a>
-                    </div>
-                </div>
 
-                <div class="form-step">
-                    <div class="btns-group">
-                        <a href="#" class="btn btn-prev"> < </a>
-                    </div>
-                    <div class="wrapper-input">
+                    <div class="wrapper-input tab">
                         <div class="input-group">
-                            <label for="loc"> I am from </label>
-                            <input type="text" name="loc" id="loc" placeholder="New Roads, 70760"/>
+                            <label for="location"> I am from </label>
+                            <input 
+                                oninput="this.className = ''"
+                                type="text" 
+                                name="location" 
+                                id="location" 
+                                placeholder="New Roads, 70760"
+                            />
                         </div>
                         <p>E.g.: New Roads or 70760 <br> We don’t use postal addresses to contact members directly!</p> 
                     </div>
-                    <div class="btns-group">
-                        <a href="#" class="btn btn-next"> Next step > </a>
-                    </div>
-                </div>
 
-                <div class="form-step">
-                    <div class="btns-group">
-                        <a href="#" class="btn btn-prev"> < </a>
-                    </div>
-                    <div class="wrapper-input">
+                    <div class="wrapper-input tab">
                         <div class="input-group">
-                            <label for="email">Your email adress</label>
-                            <input type="text" name="email" id="email" placeholder="Input your email"/>
+                            <label for="emailBox">Your email adress
+                                <input 
+                                    oninput="this.className = ''"
+                                    class="email"
+                                    type="email" 
+                                    name="email" 
+                                    id="email" 
+                                    placeholder="Input your email"
+                                />
+                            </label>
                         </div>
+                        <span id="errorEmail"> </span>
                     </div>
-                    <div class="btns-group">
-                        <a href="#" class="btn btn-next"> Next step > </a>
-                    </div>
-                </div>
 
-                <div class="form-step">
-                    <div class="btns-group">
-                        <a href="#" class="btn btn-prev"> < </a>
-                    </div>
-                    <div class="wrapper-input">
+                    <div class="wrapper-input tab">
                         <div class="input-group">
-                        <label for="password">Create your password</label>
-                        <input type="password" name="password" id="password" />
-                    </div>
+                            <label for="password">Create your password</label>
+                            <input
+                                oninput="this.className = ''"
+                                type="password" 
+                                name="password" 
+                                id="password" 
+                            />
+                        </div>
                         <p>By clicking the button above you agree to our Terms of Use and </p>
                     </div>
-                    <div class="btns-group">
-                        <input type="submit" value="Start now >" class="btn btn-start" />
+                    
+                    <div style="overflow:auto;">
+                        <div style="float:right;">
+                            <button 
+                                type="button" 
+                                id="nextBtn" 
+                                onclick="nextPrev(1)"> 
+                            </button> 
+                        </div>
                     </div>
                 </div>
+                
+                <!-- Circles which indicates the steps of the form: -->
+                <div class="step-wrapper">
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                    <span class="step"></span>
+                </div>
             </form>
-            
-            <!-- Progress bar -->
-            <div class="progressbar container">
-                <div class="progress" id="progress"></div>
-                <div class="progress-step progress-step-active"></div>
-                <div class="progress-step"></div>
-                <div class="progress-step"></div>
-                <div class="progress-step"></div>
-                <div class="progress-step"></div>
-            </div>
         </section>
+        <!-- <section>
+            <div class="container">
+                <input type="email" id="emailField">
+                <br />
+                <button id="buttonEmail">Check validation</button>
+                <div id="responseEmail"></div>
+            </div>
+            <div class="container">
+                <input type="tel" id="telField">
+                <br />
+                <button id="buttonTel">Check validation</button>
+                <div id="responseTel"></div>
+            </div>
+            <div class="container">
+                <input type="text" id="textField">
+                <br />
+                <button id="buttonText">Check validation</button>
+                <div id="responseText"></div>
+            </div>
+        </section> -->
     </main>
-    <script src="/js/script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>
