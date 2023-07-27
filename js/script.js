@@ -41,12 +41,12 @@
 // // pattern="^[-a-z0-9!#$%&'*+/=?^_`{|}~]+(?:\.[-a-z0-9!#$%&'*+/=?^_`{|}~]+)*@(?:[a-z0-9]([-a-z0-9]{0,61}[a-z0-9])?\.)*(?:aero|arpa|asia|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|[a-z][a-z])$"
 // // pattern="[0-9a-zA-Z!@#$%^&*]{7,}"
 
-var currentTab = 0; // Current tab is set to be the first tab (0)
+const currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
 function showTab(n) {
   // This function will display the specified tab of the form ...
-  var x = document.getElementsByClassName("tab");
+  let x = document.getElementsByClassName("tab");
   // const arrowRight = document.getElementsByClassName("arrow-right");
   x[n].style.display = "block";
   // ... and fix the Previous/Next buttons:
@@ -68,7 +68,7 @@ function showTab(n) {
 
 function nextPrev(n) {
   // This function will figure out which tab to display
-  var x = document.getElementsByClassName("tab");
+  let x = document.getElementsByClassName("tab");
   // Exit the function if any field in the current tab is invalid:
   if (n == 1 && !validateForm()) return false;
   // Hide the current tab:
@@ -87,7 +87,7 @@ function nextPrev(n) {
 
 function validateForm() {
   // This function deals with validation of the form fields
-  var x, y, i, valid = true;
+  let x, y, i, valid = true;
   x = document.getElementsByClassName("tab");
   y = x[currentTab].getElementsByClassName("email");
   // A loop that checks every input field in the current tab:
