@@ -18,7 +18,7 @@
                 <li>
                     <input 
                     class="input-sing-in" type="email" placeholder="Email">
-                    <!-- <span id="errorEmail"> </span> -->
+                    <!-- <span class="errorEmail"> </span> -->
                 </li>
                 <li>
                     <input class="input-sing-in" type="password" placeholder="Password">
@@ -43,7 +43,6 @@
 
         <section class="container container-form">
             <form id="regForm" action="">                
-                <!-- One "tab" for each step in the form: -->
                 <div class="register" >
                     <div style="overflow:auto;">
                         <div style="float:right;">
@@ -88,27 +87,27 @@
                                 oninput="this.className = ''"
                                 type="text" 
                                 name="location" 
-                                id="location" 
+                                id="text" 
                                 placeholder="New Roads, 70760"
                             />
                         </div>
                         <p>E.g.: New Roads or 70760 <br> We don’t use postal addresses to contact members directly!</p> 
+                        <span id="errorLocation"> </span>
                     </div>
 
                     <div class="wrapper-input tab">
                         <div class="input-group">
-                            <label for="emailBox">Your email adress
+                            <label for="email">Your email adress
                                 <input 
                                     oninput="this.className = ''"
-                                    class="email"
                                     type="email" 
-                                    name="email" 
-                                    id="email" 
+                                    name="emailForm" 
+                                    id="emailForm" 
                                     placeholder="Input your email"
                                 />
                             </label>
                         </div>
-                        <span id="errorEmail"> </span>
+                        <span id="errorEmailForm"> </span>
                     </div>
 
                     <div class="wrapper-input tab">
@@ -117,11 +116,12 @@
                             <input
                                 oninput="this.className = ''"
                                 type="password" 
-                                name="password" 
-                                id="password" 
+                                name="passwordForm" 
+                                id="passwordForm" 
                             />
                         </div>
                         <p>By clicking the button above you agree to our Terms of Use and </p>
+                        <span id="errorPasswordForm"> </span>
                     </div>
                     
                     <div style="overflow:auto;">
@@ -134,8 +134,7 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Circles which indicates the steps of the form: -->
+
                 <div class="step-wrapper">
                     <span class="step"></span>
                     <span class="step"></span>
@@ -145,26 +144,6 @@
                 </div>
             </form>
         </section>
-        <!-- <section>
-            <div class="container">
-                <input type="email" id="emailField">
-                <br />
-                <button id="buttonEmail">Check validation</button>
-                <div id="responseEmail"></div>
-            </div>
-            <div class="container">
-                <input type="tel" id="telField">
-                <br />
-                <button id="buttonTel">Check validation</button>
-                <div id="responseTel"></div>
-            </div>
-            <div class="container">
-                <input type="text" id="textField">
-                <br />
-                <button id="buttonText">Check validation</button>
-                <div id="responseText"></div>
-            </div>
-        </section> -->
     </main>
     <script src="./js/script.js"></script>
 </body>

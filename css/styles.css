@@ -292,7 +292,7 @@ input.invalid {
     box-shadow: 0 0 15px #3cd342;
 }
 
-#errorEmail {
+#errorEmailForm, #errorPasswordForm, #errorLocationForm {
     display: block;
     padding: 0.75rem;
     border: none;
@@ -300,9 +300,13 @@ input.invalid {
     margin: 0.2rem 2rem;
 }
 
+#errorPasswordForm, #errorLocationForm {
+    font-size: 0.8rem;
+}
+
 .step-wrapper {
     position: fixed;
-    bottom: 360px;
+    bottom: 330px;
     left: 45%;
     text-align: center;
     margin-top: 100px;
