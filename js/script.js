@@ -44,6 +44,39 @@
 let currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
+const emailField = document.getElementById("emailField");
+const passwordField = document.getElementById("passwordField");
+const buttonLogin = document.getElementById("button-login");
+const errorEmailLogin = document.getElementById("errorEmailLogin");
+const responsePassword = document.getElementById("responsePassword");
+
+buttonLogin.addEventListener("click", function () {
+  const email = emailField.value;
+  const password = passwordField.value;
+  if (!validateEmail(email)) {
+    errorEmailLogin.innerHTML = "Please enter a valid email address";
+    errorEmailLogin.style.background = '#e22a32';
+  }
+  if (!validatePassword(password)) {
+    responsePassword.innerHTML = "Sorry, this pas is not cool enough 😩";
+  }
+});
+
+function validateEmail(email) {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
+function validatePassword(password) {
+  const re = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+  return re.test(String(password));
+}
+
+
+
+
+
+
 function showTab(n) {
   // This function will display the specified tab of the form ...
   const x = document.getElementsByClassName("tab");

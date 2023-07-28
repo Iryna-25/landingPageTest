@@ -16,19 +16,22 @@
                     <img class="logo" src="/images/svg/logo.svg" alt="logo" width="300" height="20">
                 </li>
                 <li>
-                    <input 
-                    class="input-sing-in" type="email" placeholder="Email">
-                    <!-- <span class="errorEmail"> </span> -->
-                </li>
-                <li>
-                    <input class="input-sing-in" type="password" placeholder="Password">
-                    <p>Forgot password?</p>
-                </li>
+                    <form action="">
+                        <div class="container">
+                            <div>
+                                <input class="input-sing-in" type="email" id="emailField" placeholder="Email">
+                                <span id="errorEmailLogin"></span>
+                            </div>
+                            
+                            <div>
+                                <input class="input-sing-in" type="password" placeholder="Password" id="passwordField">
+                                <p>Forgot password?</p>
+                                <span id="responsePassword"></span>  
+                            </div>
 
-                <li>
-                    <button 
-                    class="btn btn-login" 
-                    id="sbBtn">Log in</button>
+                            <button class="btn btn-login" id="button-login">Log in</button>
+                        </div> 
+                    </form>
                 </li>
             </ul>
         </div>
