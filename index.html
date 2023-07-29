@@ -11,27 +11,27 @@
 <body>
     <header>
         <div class="container">
-            <ul class="sign-in">
+            <ul class="login">
                 <li>
                     <img class="logo" src="/images/svg/logo.svg" alt="logo" width="300" height="20">
                 </li>
                 <li>
-                    <form action="">
-                        <div class="container">
-                            <div>
-                                <input class="input-sing-in" type="email" id="emailField" placeholder="Email">
+                    <!-- <form action=""> -->
+                        <div class="container-login">
+                            <div class="login-email-wrapper">
+                                <input class="input-login" type="email" id="emailField" placeholder="Email">
                                 <span id="errorEmailLogin"></span>
                             </div>
                             
-                            <div>
-                                <input class="input-sing-in" type="password" placeholder="Password" id="passwordField">
-                                <p>Forgot password?</p>
-                                <span id="responsePassword"></span>  
+                            <div class="login-password-wrapper">
+                                <input class="input-login" type="password" placeholder="Password" id="passwordField">
+                                <a href="">Forgot your password?</a>
+                                <span id="errorPasswordLogin"></span>  
                             </div>
 
-                            <button class="btn btn-login" id="button-login">Log in</button>
+                            <button type="button" id="logBtn">Log in</button>
                         </div> 
-                    </form>
+                    <!-- </form> -->
                 </li>
             </ul>
         </div>

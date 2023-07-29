@@ -44,21 +44,29 @@
 let currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
+
 const emailField = document.getElementById("emailField");
 const passwordField = document.getElementById("passwordField");
-const buttonLogin = document.getElementById("button-login");
+const logBtn = document.getElementById("logBtn");
 const errorEmailLogin = document.getElementById("errorEmailLogin");
-const responsePassword = document.getElementById("responsePassword");
+const errorPasswordLogin = document.getElementById("errorPasswordLogin");
 
-buttonLogin.addEventListener("click", function () {
+logBtn.addEventListener("click", function () {
   const email = emailField.value;
   const password = passwordField.value;
-  if (!validateEmail(email)) {
+  
+  if (!validateEmail(email) ) {
     errorEmailLogin.innerHTML = "Please enter a valid email address";
     errorEmailLogin.style.background = '#e22a32';
   }
   if (!validatePassword(password)) {
-    responsePassword.innerHTML = "Sorry, this pas is not cool enough 😩";
+    errorPasswordLogin.innerHTML = "Please enter a password";
+    errorPasswordLogin.style.background = '#e22a32';
+  }
+  if (!validatePassword(password) && validatePassword(password)) {
+    errorEmailLogin.innerHTML = " ";
+    errorPasswordLogin.innerHTML = " ";
+
   }
 });
 
@@ -68,12 +76,9 @@ function validateEmail(email) {
 }
 
 function validatePassword(password) {
-  const re = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+  const re = /^[0-9a-zA-Z!@#$%^&*]{7,}$/;
   return re.test(String(password));
 }
-
-
-
 
 
 

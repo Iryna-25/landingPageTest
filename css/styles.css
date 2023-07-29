@@ -51,6 +51,14 @@ p {
     color: #a9b1ad;
 }
 
+a {
+    display: block;
+    text-align: left;
+    padding-top: 0.7rem;
+    color: #fff;
+    font-size: 0.7rem;
+}
+
 h1 {
     width: 100%;
     font-size: 2.5rem;
@@ -87,6 +95,10 @@ h2 {
     text-align: center;
 }
 
+.container-login {
+    display: flex;
+}
+
 .container-form {
     position: relative;
     display: block;
@@ -99,7 +111,7 @@ h2 {
     margin-right: 12rem;
 }
 
-.sign-in {
+.login {
     width: 100%;
     display: flex;
     padding: 1rem;
@@ -107,13 +119,19 @@ h2 {
     margin: 0px auto; 
 }
 
-.sign-in li {
+.login li {
     padding-left: 5px;
 }
 
-.sign-in li input {
+.login li input {
     width: 200px;
     margin-right: 0.5rem;
+}
+
+.login button {
+    width: 80px;
+    height: 40px;
+    margin-top: 0.3rem;
 }
 
 /* Form */ 
@@ -144,7 +162,7 @@ h2 {
 } */
   
 /* Button */  
-.btn {
+#logBtn {
     padding: 0.75rem;
     display: block;
     text-decoration: none;
@@ -154,35 +172,11 @@ h2 {
     cursor: pointer;
     transition: 0.3s;
     border: none;
-}
-
-.btn-login, .btn-next {
     background: linear-gradient(45deg, #5866ea, transparent) #2ba0ea;
 }
 
-.btn-prev {
-    border: solid 2px #fff;
-
-}
-
-.btn-login {
-    font-weight: 600;
-}
-
-.btn-login:hover,
-.btn-login:focus,
-.btn-next:hover,
-.btn-next:focus {
+#logBtn:hover, #logBtn:hover {
     box-shadow: 0 0 15px  #2ba0ea;
-}
-
-.btn-start {
-    background: linear-gradient(45deg, #4caf50, transparent) #3cd342;
-}
-
-.btn-start:hover,
-.btn-start:focus {
-    box-shadow: 0 0 15px #3cd342;
 }
 
 
@@ -293,18 +287,30 @@ input.invalid {
 }
 
 #errorEmailForm, 
-#errorEmailLogin, 
 #errorPasswordForm, 
-#errorLocationForm {
+#errorLocationForm,
+#errorEmailLogin, 
+#errorPasswordLogin {
     display: block;
     padding: 0.75rem;
     border: none;
     border-radius: 0.3rem;
-    margin: 0.2rem 2rem;
+    margin: 0.3rem 2rem;
 }
 
-#errorPasswordForm, #errorLocationForm {
+#errorPasswordForm, 
+#errorLocationForm {
     font-size: 0.8rem;
+}
+
+#errorEmailLogin, 
+#errorPasswordLogin {
+    margin: 0.3rem 0rem;
+    font-size: 0.7rem;
+    color: #fff;
+    font-weight: 500;
+    margin-right: 0.5rem;
+    width: 200px;
 }
 
 .step-wrapper {
