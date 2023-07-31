@@ -54,6 +54,8 @@ const errorPasswordLogin = document.getElementById("errorPasswordLogin");
 logBtn.addEventListener("click", function () {
   const email = emailField.value;
   const password = passwordField.value;
+
+  document.getElementById("container-login").style.visibility = "visible";
   
   if (!validateEmail(email) ) {
     errorEmailLogin.innerHTML = "Please enter a valid email address";
@@ -82,18 +84,18 @@ function validatePassword(password) {
 
 
 
-function showTab(n) {
+function showTab(step) {
   // This function will display the specified tab of the form ...
-  const x = document.getElementsByClassName("tab");
+  const tab = document.getElementsByClassName("tab");
   // const arrowRight = document.getElementsByClassName("arrow-right");
-  x[n].style.display = "block";
+  tab[step].style.display = "block";
   // ... and fix the Previous/Next buttons:
-  if (n == 0) {
+  if (step == 0) {
     document.getElementById("prevBtn").style.display = "none";
   } else {
     document.getElementById("prevBtn").style.display = "inline";
   }
-  if (n == (x.length - 1)) {
+  if (step == (tab.length - 1)) {
     document.getElementById("nextBtn").innerHTML = "Start now";
     document.getElementById("nextBtn").style.background = 'linear-gradient(45deg, #4caf50, #3cd342)';
     document.getElementById("nextBtn").style.boxShadow = '0 0 15px #3cd342';
@@ -101,20 +103,20 @@ function showTab(n) {
     document.getElementById("nextBtn").innerHTML = "Next step";
   }
   // ... and run a function that displays the correct step indicator:
-  fixStepIndicator(n)
+  fixStepIndicator(step)
 }
 
-function nextPrev(n) {
+function nextPrev(step) {
   // This function will figure out which tab to display
-  const x = document.getElementsByClassName("tab");
+  const tab = document.getElementsByClassName("tab");
   // Exit the function if any field in the current tab is invalid:
-  if (n == 1 && !validateForm()) return false;
+  if (step == 1 && !validateForm()) return false;
   // Hide the current tab:
-  x[currentTab].style.display = "none";
+  tab[currentTab].style.display = "none";
   // Increase or decrease the current tab by 1:
-  currentTab = currentTab + n;
+  currentTab = currentTab + step;
   // if you have reached the end of the form... :
-  if (currentTab >= x.length) {
+  if (currentTab >= tab.length) {
     //...the form gets submitted:
     document.getElementById("regForm").submit();
     return false;
@@ -130,7 +132,7 @@ function validateForm() {
 
   const validateEmail = (inputEmail)=> inputEmail.value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
   const validatePassword = (inputPassword)=> inputPassword.value.match(/^[0-9a-zA-Z!@#$%^&*]{7,}$/);
-  // const validateLocation = (inputLocation)=> inputLocation.value.match(/^[0-9a-zA-Z!@#$%^&*, ]{2,} [0-9]{5,}$/);
+  const validateLocation = (inputLocation)=> inputLocation.value.match(/^[0-9a-zA-Z!@#$%^&*, ]{2,} [0-9]{5,}$/);
 
   for (i = 0; i < inputTag.length; i++) {
     if (inputTag[i].id == "emailForm" && !validateEmail(emailForm)) {
@@ -145,11 +147,11 @@ function validateForm() {
       valid = false;
     }
 
-    // if (inputTag[i].id == "text" && !validateLocation(text)) {
-    //   document.getElementById("errorLocation").innerHTML = "Enter your postal code to find local matches";
-    //   document.getElementById("errorLocation").style.background = '#e22a32';
-    //   valid = false;
-    // }
+    if (inputTag[i].id == "text" && !validateLocation(text)) {
+      document.getElementById("errorLocationForm").innerHTML = "Enter your postal code to find local matches";
+      document.getElementById("errorLocationForm").style.background = '#e22a32';
+      valid = false;
+    }
   }
 
   if (valid) {
@@ -158,14 +160,14 @@ function validateForm() {
   return valid; 
 }
 
-function fixStepIndicator(n) {
+function fixStepIndicator(step) {
   // This function removes the "active" class of all steps...
-  var i, x = document.getElementsByClassName("step");
+  var i, tab = document.getElementsByClassName("step");
   for (i = 0; i < x.length; i++) {
-    x[i].className = x[i].className.replace(" active", "");
+    tab[i].className = x[i].className.replace(" active", "");
   }
   //... and adds the "active" class to the current step:
-  x[n].className += " active";
+  tab[step].className += " active";
 }
 
 

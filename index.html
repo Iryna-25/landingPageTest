@@ -16,22 +16,20 @@
                     <img class="logo" src="/images/svg/logo.svg" alt="logo" width="300" height="20">
                 </li>
                 <li>
-                    <!-- <form action=""> -->
-                        <div class="container-login">
-                            <div class="login-email-wrapper">
-                                <input class="input-login" type="email" id="emailField" placeholder="Email">
-                                <span id="errorEmailLogin"></span>
-                            </div>
-                            
-                            <div class="login-password-wrapper">
-                                <input class="input-login" type="password" placeholder="Password" id="passwordField">
-                                <a href="">Forgot your password?</a>
-                                <span id="errorPasswordLogin"></span>  
-                            </div>
-
-                            <button type="button" id="logBtn">Log in</button>
-                        </div> 
-                    <!-- </form> -->
+                    <div id="container-login">
+                        <div class="login-email-wrapper">
+                            <input class="input-login" type="email" id="emailField" placeholder="Email">
+                            <span id="errorEmailLogin"></span>
+                        </div>
+                        <div class="login-password-wrapper">
+                            <input class="input-login" type="password" placeholder="Password" id="passwordField">
+                            <a href="">Forgot your password?</a>
+                            <span id="errorPasswordLogin"></span>  
+                        </div>                           
+                    </div> 
+                </li>
+                <li>
+                    <button type="button" id="logBtn">Log in</button>
                 </li>
             </ul>
         </div>
@@ -95,7 +93,7 @@
                             />
                         </div>
                         <p>E.g.: New Roads or 70760 <br> We don’t use postal addresses to contact members directly!</p> 
-                        <span id="errorLocation"> </span>
+                        <span id="errorLocationForm"> </span>
                     </div>
 
                     <div class="wrapper-input tab">
@@ -123,7 +121,9 @@
                                 id="passwordForm" 
                             />
                         </div>
-                        <p>By clicking the button above you agree to our Terms of Use and </p>
+                        <p class="helper">By clicking the button above you agree to our Terms of Use
+                            and Privacy Policy including use of cookies and to receive newsletters, 
+                            account updates and offers sent by StarCompany.  </p>
                         <span id="errorPasswordForm"> </span>
                     </div>
                     

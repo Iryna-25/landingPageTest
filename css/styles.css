@@ -14,7 +14,9 @@ body {
     margin: 0;
     display: grid;
     min-height: 100vh;
-    background: url(../images/bg.png) no-repeat center center;
+    background-image: linear-gradient(rgba(39, 38, 42, 0.6) 100%, rgba(39, 38, 42, 0.6) 100%), url(../images/bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
 }
 
@@ -48,7 +50,11 @@ select {
 
 p {
     font-size: 10px;
+    
     color: #a9b1ad;
+}
+.helper {
+    margin: 4px 32px;
 }
 
 a {
@@ -201,12 +207,7 @@ input, select {
     border: none;
     border-radius: 0.3rem;
 }
-  
-  /* Mark input boxes that gets an error on validation: */
-input.invalid {
-    background-color: #ffdddd;
-}
-  
+
   /* Hide all steps by default: */
 .tab {
     display: none;
@@ -306,16 +307,16 @@ input.invalid {
 #errorEmailLogin, 
 #errorPasswordLogin {
     margin: 0.3rem 0rem;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     color: #fff;
-    font-weight: 500;
+    font-weight: 600;
     margin-right: 0.5rem;
     width: 200px;
 }
 
 .step-wrapper {
     position: fixed;
-    bottom: 330px;
+    bottom: 23rem;
     left: 45%;
     text-align: center;
     margin-top: 100px;
@@ -345,4 +346,13 @@ input.invalid {
     padding: 3px;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
+}
+
+#container-login {
+    display: flex;
+    /* text-align: center;
+    align-items: center;
+    justify-content: baseline; */
+    margin-top: 3rem;
+    visibility: hidden;
 }
