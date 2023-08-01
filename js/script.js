@@ -43,6 +43,52 @@
 
 let currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
+let currentLoginBtn = 0;
+showLoginBtn(currentLoginBtn);
+
+
+
+
+
+function showLoginBtn(step) {
+  // This function will display the specified tab of the form ...
+  const LoginBtn = document.getElementsByClassName("container-login");
+  // const arrowRight = document.getElementsByClassName("arrow-right");
+  LoginBtn[step].style.display = "block";
+  // ... and fix the Previous/Next buttons:
+  if (step == 0) {
+    document.getElementById("logBtn").style.display = "none";
+  } else {
+    document.getElementById("logBtn").style.display = "inline";
+  }
+  if (step == (LoginBtn.length - 1)) {
+    document.getElementById("logBtn").innerHTML = "Start now";
+    document.getElementById("logBtn").style.background = 'linear-gradient(45deg, #4caf50, #3cd342)';
+    document.getElementById("logBtn").style.boxShadow = '0 0 15px #3cd342';
+  } else {
+    document.getElementById("logBtn").innerHTML = "Next step";
+  }
+  // ... and run a function that displays the correct step indicator:
+  fixStepIndicator(stepLogin)
+}
+
+function nextLoginBtn(step) {
+  // This function will figure out which tab to display
+  const LoginBtn = document.getElementsByClassName("container-login");
+  // Exit the function if any field in the current tab is invalid:
+  if (step == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  LoginBtn[currentLoginBtn].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentLoginBtn = currentLoginBtn + step;
+  // if you have reached the end of the form... :
+  if (currentLoginBtn >= LoginBtn.length) {
+    //...the form gets submitted:
+    document.getElementById("container").submit();
+    return false;
+  }
+  // Otherwise, display the correct tab:
+}
 
 
 const emailField = document.getElementById("emailField");
@@ -51,26 +97,36 @@ const logBtn = document.getElementById("logBtn");
 const errorEmailLogin = document.getElementById("errorEmailLogin");
 const errorPasswordLogin = document.getElementById("errorPasswordLogin");
 
-logBtn.addEventListener("click", function () {
-  const email = emailField.value;
-  const password = passwordField.value;
+function showLogin() {
+  var x = document.getElementById("container-login");
+  if (x.style.visibility === "hidden") {
+    x.style.visibility = "visible";
+    document.getElementById("logBtn").style.color = '#e22a32';
+  } else {
+    x.style.visibility = "hidden";
+    logBtn.style.color = '#e22a32';
+  }
+}
 
-  document.getElementById("container-login").style.visibility = "visible";
+
+// logBtn.addEventListener("click", function () {
+//   const email = emailField.value;
+//   const password = passwordField.value;
   
-  if (!validateEmail(email) ) {
-    errorEmailLogin.innerHTML = "Please enter a valid email address";
-    errorEmailLogin.style.background = '#e22a32';
-  }
-  if (!validatePassword(password)) {
-    errorPasswordLogin.innerHTML = "Please enter a password";
-    errorPasswordLogin.style.background = '#e22a32';
-  }
-  if (!validatePassword(password) && validatePassword(password)) {
-    errorEmailLogin.innerHTML = " ";
-    errorPasswordLogin.innerHTML = " ";
+//   if (!validateEmail(email) ) {
+//     errorEmailLogin.innerHTML = "Please enter a valid email address";
+//     errorEmailLogin.style.background = '#e22a32';
+//   }
+//   if (!validatePassword(password)) {
+//     errorPasswordLogin.innerHTML = "Please enter a password";
+//     errorPasswordLogin.style.background = '#e22a32';
+//   }
+//   // if (!validatePassword(password) && validatePassword(password)) {
+//   //   errorEmailLogin.innerHTML = " ";
+//   //   errorPasswordLogin.innerHTML = " ";
 
-  }
-});
+//   // }
+// });
 
 function validateEmail(email) {
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -162,7 +218,7 @@ function validateForm() {
 
 function fixStepIndicator(step) {
   // This function removes the "active" class of all steps...
-  var i, tab = document.getElementsByClassName("step");
+  let i, tab = document.getElementsByClassName("step");
   for (i = 0; i < x.length; i++) {
     tab[i].className = x[i].className.replace(" active", "");
   }

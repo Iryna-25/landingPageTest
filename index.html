@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="container" id="container">
             <ul class="login">
                 <li>
                     <img class="logo" src="/images/svg/logo.svg" alt="logo" width="300" height="20">
@@ -25,11 +25,11 @@
                             <input class="input-login" type="password" placeholder="Password" id="passwordField">
                             <a href="">Forgot your password?</a>
                             <span id="errorPasswordLogin"></span>  
-                        </div>                           
+                        </div>                         
                     </div> 
                 </li>
                 <li>
-                    <button type="button" id="logBtn">Log in</button>
+                    <button type="button" class="logBtn" id="logBtn" onClick="showLogin()">Log in</button> 
                 </li>
             </ul>
         </div>

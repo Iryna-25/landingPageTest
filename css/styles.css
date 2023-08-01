@@ -168,7 +168,7 @@ h2 {
 } */
   
 /* Button */  
-#logBtn {
+/* #logBtn {
     padding: 0.75rem;
     display: block;
     text-decoration: none;
@@ -183,7 +183,7 @@ h2 {
 
 #logBtn:hover, #logBtn:hover {
     box-shadow: 0 0 15px  #2ba0ea;
-}
+} */
 
 
 /* Style the form */
