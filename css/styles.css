@@ -154,6 +154,7 @@ h2 {
     top: 40px;
     display: block;
     width: clamp(300px, 40%, 400px);
+    height: 120px;
 }
   
 /* @keyframes animate {
@@ -315,9 +316,9 @@ input, select {
 }
 
 .step-wrapper {
-    position: fixed;
-    bottom: 23rem;
-    left: 45%;
+    /* bottom: 23rem;
+    left: 45%; */
+    position: relative;
     text-align: center;
     margin-top: 100px;
 }
